@@ -1,9 +1,31 @@
+// function isPalindrome(word) {
+//   let halfLength = Math.ceil(word.length / 2)
+//   const firstHalf = word.slice(0, halfLength);
+//   if ((word.length % 2) !== 0 ) {halfLength--};
+//   const secondHalf = word.slice(halfLength)
+//   const revSecondHalf = secondHalf.split('').reverse().join('')
+//   return firstHalf === revSecondHalf ? true : false;
+// }
+
+// solution 2:
+
 function isPalindrome(word) {
-  // Write your algorithm here
+  let halfLength = Math.ceil(word.length / 2)
+  const firstHalf = word.slice(0, halfLength);
+  let i = 0;
+  for (let char of firstHalf) {
+    if (word[word.length-1-i] !== char) return false; 
+    i++;
+  }
+  return true;
 }
 
+
 /* 
-  Add your pseudocode here
+  recive string and check (half)length.
+  slice word down middle, add mid letter to both sides (if length is uneven).
+  split into array, reverse and join the reversed second half.
+  compare both halves. return boolien. 
 */
 
 /*
